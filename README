@@ -1,0 +1,18 @@
+Pentru calculul ariilor folosind metoda Trapezelor si Simpson, calculez la fiecare pas aria de sub grafic pentru punctele date pe care o adun la valoarea integralei (I).
+Suma este una algebrica - aici m-am folosit de faptul ca suprafetele sunt date in sens trigonometric incepand de la "ora 12".
+Astfel atunci cand sensul de parcurgere este de la stanga la dreapta am h = x(p) - x(p-1) < 0 deci scad. In caz contrar am h > 0 deci adun.
+Stiu cu siguranta ca aria trebuie sa fie pozitiva deci la sfarsit, daca este nevoie, schimb semnul.
+
+Pentru calculul centroidului unei suprafete inchise folosesc formula data aici: http://en.wikipedia.org/wiki/Centroid#Centroid_of_polygon.
+O alternativa ar fi fost sa calculez media aritmetica a coordonatelor punctelor, dar acest lucru nu ar fi fost adecvat deoarece aceasta ar fi putut fi influentata de densitatea mai mare a punctelor dintr-o anumita zona.
+
+Pentru calculul volumului am folosit ariile calculate la punctul precedent.
+Datele pe care le am sunt: ariile si coordonata. Avand asta am calculat intregrala din Arie dupa coordonata z: (A dz). Dimensional aceasta formula este corecta unitatea de masura obtinuta fiind m^3.
+
+Pentru masa am calculat produsul punct cu punct al ariilor cu densitatile: A .* d; apoi am intregrat dupa coordonata z (A .* d dz). Dimensional am m^2 * (kg/m^3) * m, rezultatul fiind kg.
+
+Pentru calculul centrului de greutate am folosit centrele de masa ale suprafetelor pentru care am calculat o medie ponderata dupa Arie si Densitate.
+Am calculat suma valorilor coordonatelor inmultita cu aria si densitatea pentru fiecare punct pe care am impartit-o la suma din arie * densitate.
+Dimensional am (m * m^2 * (kg / m^3)) / (m^2 * (kg / m^3))  = m ceea ce este corect.
+
+Pentru calculul tuturor parametrilor (masa, volum, arie, centroid etc.) am folosit aria calculata cu metoda trapezelor deoarece in acest caz, Simpson mi s-a parut susceptibil erorilor datorita cazului in care punctele pot avea o asezare de tip "zig-zag" de exemplu o pereche pentru x cu urmatoarea distributie (2, 1, 1.5), sau oricare alta de tip asemanator.
